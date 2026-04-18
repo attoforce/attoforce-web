@@ -4,84 +4,119 @@ Source for [attoforce.ai](https://attoforce.ai) — a minimal, static single-pag
 
 > make AI work
 
-## What's here
+## Contents
 
 ```
 attoforce-web/
-├── index.html          # the entire site
-├── css/styles.css      # styles
-├── assets/             # SVG logos + favicon
-│   ├── logo-dark.svg
-│   ├── logo-light.svg
-│   ├── logo-mark.svg
-│   ├── logo-mark-light.svg
-│   └── favicon.svg
-├── CNAME               # (optional) custom domain for GitHub Pages
-├── LICENSE
+├── index.html              # the entire site (one page, anchored sections)
+├── css/styles.css          # gray-monochrome stylesheet
+├── assets/                 # SVG logos + favicon
+│   ├── favicon.svg
+│   ├── logo-dark.svg       # dark wordmark on light bg
+│   ├── logo-light.svg      # light wordmark on dark bg
+│   ├── logo-gray.svg       # black wordmark + white arrow on brand gray
+│   ├── logo-mark.svg       # icon only, dark
+│   └── logo-mark-light.svg # icon only, light
+├── CNAME                   # attoforce.ai (used by GitHub Pages if you choose it)
+├── LICENSE                 # MIT
 └── README.md
 ```
 
-No build step, no framework, no JavaScript bundler. Just three static files plus assets. Any static host will serve it.
+No build step. No framework. No JS bundler. Any static host will serve it.
+
+## Site sections
+
+1. **Hero** — logo + "make AI work" + short intro
+2. **Who we are** — AI & Cloud startup, founder context, ASEAN/India/APJ
+3. **Our Belief** — "The hardest work is making things simple" + Vision card
+4. **Core Tenets** — Simplification, Speed, Precision, Outcomes
+5. **Team** — DP bio with LinkedIn link
+6. **Services** — Coming soon
+7. **Contact** — mailto:contact@attoforce.ai
 
 ## Preview locally
 
 ```bash
-# Python 3
+cd attoforce-web
 python3 -m http.server 8000
-
-# or Node
-npx serve .
+# → open http://localhost:8000
 ```
 
-Then open [http://localhost:8000](http://localhost:8000).
+Or: `npx serve .`
 
-## Deploy to Porkbun (static hosting)
+## Deploy to Porkbun Static Hosting
 
-Porkbun offers free static hosting on any domain registered with them.
+Porkbun offers free static hosting on any domain registered with them —
+perfect for this site.
 
-1. Log in at [porkbun.com](https://porkbun.com) and open **Domain Management** for `attoforce.ai`.
-2. Under the domain, click **Static Hosting → Enable**.
-3. ZIP the contents of this folder (not the folder itself — the ZIP's root should contain `index.html`):
-   ```bash
-   cd attoforce-web
-   zip -r ../attoforce-web.zip . -x "*.git*" "*.DS_Store"
-   ```
-4. In the Porkbun dashboard, **upload the ZIP**. Porkbun will extract it to the hosting root.
-5. Wait for the SSL certificate to provision (usually 5–30 minutes).
-6. Visit `https://attoforce.ai`.
+### Step 1 — Enable static hosting
 
-To update the site later, upload a new ZIP — Porkbun replaces the previous contents.
+1. Log in at [porkbun.com](https://porkbun.com).
+2. Go to **Domain Management** and click **Details** on `attoforce.ai`.
+3. Scroll to **Static Hosting** and click **Manage** → **Enable**.
+4. Wait a minute for Porkbun to provision the hosting environment and
+   issue an SSL certificate (first-time setup).
 
-## Deploy to GitHub Pages (alternative)
+### Step 2 — Prepare the upload
 
-1. Push this repo to GitHub (see below).
-2. Go to **Settings → Pages**.
-3. Set **Source** to `Deploy from a branch`, **Branch** to `main`, folder `/ (root)`.
-4. To use `attoforce.ai`, keep the `CNAME` file in this repo and in Porkbun DNS, add:
-   - `ALIAS` or `ANAME` for `attoforce.ai` → `<your-github-username>.github.io`
-   - `CNAME` for `www.attoforce.ai` → `<your-github-username>.github.io`
-
-## Push to GitHub
-
-The repo has already been initialized with an initial commit. To publish:
+Porkbun expects a ZIP whose root contains `index.html` (not a folder
+wrapping it). From inside this repo:
 
 ```bash
-# Create the remote repo on github.com first (empty, no README)
-git remote add origin git@github.com:<your-github-username>/attoforce-web.git
-git branch -M main
-git push -u origin main
+cd attoforce-web
+
+# Clean up anything you don't want shipped
+rm -f .DS_Store
+
+# Create the deploy zip (exclude git + system files)
+zip -r ../attoforce-web.zip . \
+  -x "*.git*" ".git/*" ".git_old/*" ".git.stale.*/*" "*.DS_Store" "README.md" "LICENSE"
 ```
+
+> The excludes above omit files that shouldn't be public (git history,
+> stale backups, macOS noise). Keeping `README.md` and `LICENSE` out of
+> the zip is optional — they're harmless but add bytes.
+
+### Step 3 — Upload
+
+1. In the Porkbun dashboard for `attoforce.ai`, open **Static Hosting**.
+2. Click **Upload File** and select `attoforce-web.zip`.
+3. Porkbun extracts the zip into the hosting root. The previous contents
+   (if any) are replaced.
+4. Give it 1–2 minutes for the CDN to refresh. Visit
+   [https://attoforce.ai](https://attoforce.ai).
+
+### Updating the site later
+
+1. Edit files locally → `python3 -m http.server 8000` to preview.
+2. Re-zip (same command as Step 2).
+3. Re-upload the new zip in Porkbun Static Hosting. That's it.
+
+### Using `www.attoforce.ai` too
+
+In Porkbun's DNS for `attoforce.ai`, add a `CNAME` record:
+- **Host:** `www`
+- **Type:** `CNAME`
+- **Answer:** `attoforce.ai`
+
+This keeps both `attoforce.ai` and `www.attoforce.ai` pointing at the
+same static site.
 
 ## Editing content
 
-- **Copy** lives inline in `index.html` — edit the `<section>` blocks directly.
-- **Colors & typography** are defined as CSS variables at the top of `css/styles.css`.
-- **Logos** are inline SVG for the hero, and standalone SVG files in `assets/` for everywhere else.
-- **Contact email** is `dp@attoforce.ai` — search-and-replace if it ever changes.
+- **Copy** lives inline in `index.html` under each `<section>`. Edit
+  prose directly.
+- **Palette & typography** are CSS variables at the top of
+  `css/styles.css` (`--ink`, `--mist`, `--cloud`, etc.).
+- **Logos** are SVG. The hero logo is inlined in `index.html`;
+  everywhere else uses files from `assets/`.
+- **Contact email** is `contact@attoforce.ai` — search-and-replace if
+  it changes.
 
 ## Brand
 
-See `../AttoForce-Brand-Guide.html` (one level up in this workspace) for the full brand system.
+See `../AttoForce-Brand-Guide.html` (one level up in this workspace)
+for the full brand system — palette, type, logo usage rules.
 
 ## License
 

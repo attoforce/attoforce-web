@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600" role="img" aria-label="Attoforce — make AI work">
+  <!-- Gray background variant, matching the provided brand asset -->
+  <rect width="600" height="600" fill="#CFCFCF"/>
+
+  <!-- Upward-trending arrow (white) -->
+  <g fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="230,240 275,200 320,218 365,180"/>
+    <polyline points="345,180 365,180 365,200"/>
+  </g>
+
+  <!-- Wordmark (black) -->
+  <text x="300" y="340" text-anchor="middle"
+        font-family="'Montserrat','Helvetica Neue',Arial,sans-serif"
+        font-weight="300" font-size="72" letter-spacing="2" fill="#111111">Attoforce</text>
+
+  <!-- Tagline (black) -->
+  <text x="300" y="390" text-anchor="middle"
+        font-family="'Montserrat','Helvetica Neue',Arial,sans-serif"
+        font-weight="300" font-size="20" letter-spacing="1" fill="#111111">make AI work</text>
+</svg>
