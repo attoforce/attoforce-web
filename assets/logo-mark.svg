@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Attoforce mark">
+  <!-- Icon only: upward-trending arrow on transparent background -->
+  <g fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="20,78 46,42 70,60 96,22"/>
+    <polyline points="76,22 96,22 96,42"/>
+  </g>
+</svg>

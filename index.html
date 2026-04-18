@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Attoforce — make AI work. We help teams ship reliable, measurable AI systems in production." />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Attoforce — make AI work" />
+  <meta property="og:description" content="We help teams ship reliable, measurable AI systems in production." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://attoforce.ai" />
+
+  <title>Attoforce — make AI work</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <a href="#home" class="nav-mark" aria-label="Attoforce home">
+      <svg viewBox="0 0 120 120" width="28" height="28" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20,78 46,42 70,60 96,22"/>
+          <polyline points="76,22 96,22 96,42"/>
+        </g>
+      </svg>
+      <span>Attoforce</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <svg class="hero-logo" viewBox="0 0 600 260" xmlns="http://www.w3.org/2000/svg" aria-label="Attoforce">
+        <g fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="230,80 275,40 320,58 365,20"/>
+          <polyline points="345,20 365,20 365,40"/>
+        </g>
+        <text x="300" y="170" text-anchor="middle" font-family="Montserrat" font-weight="300" font-size="86" letter-spacing="2" fill="#FFFFFF">Attoforce</text>
+        <text x="300" y="220" text-anchor="middle" font-family="Montserrat" font-weight="300" font-size="24" letter-spacing="1" fill="#FFFFFF">make AI work</text>
+      </svg>
+
+      <p class="hero-sub">
+        We help teams ship AI systems that are reliable, measurable, and quietly
+        useful — the smallest amount of force required to move the chart up and to the right.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#services" class="btn btn-ghost">What we do</a>
+        <a href="#contact" class="btn btn-solid">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="rule"></span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="eyebrow">01 — About</div>
+      <h2>An <em>atto</em> is a quintillionth.</h2>
+      <p class="lead">The smallest unit that still carries force. Attoforce is built on the same idea — the smallest useful intervention, applied with precision, is what moves production metrics.</p>
+
+      <div class="two-col">
+        <p>
+          We partner with engineering and product teams to cut through the AI noise.
+          Most AI projects fail not because the models are wrong, but because the
+          <em>systems around them</em> — evals, guardrails, feedback loops, cost controls —
+          are missing.
+        </p>
+        <p>
+          Attoforce closes that gap. We design, build, and operate the boring
+          infrastructure that turns a promising prototype into something your team
+          can trust on Monday morning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section section-cloud" id="services">
+    <div class="section-inner">
+      <div class="eyebrow">02 — Services</div>
+      <h2>What we do.</h2>
+      <p class="lead">Four deliberate offerings. No packages, no tiers — just the work.</p>
+
+      <div class="services-grid">
+        <article class="service">
+          <div class="service-num">01</div>
+          <h3>AI Systems Engineering</h3>
+          <p>Architect and implement LLM pipelines, retrieval, and agent workflows that hold up under real traffic, latency budgets, and cost ceilings.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-num">02</div>
+          <h3>Evaluations &amp; Guardrails</h3>
+          <p>Continuous evals, regression harnesses, and safety layers so you know when a model change is a regression before your users do.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-num">03</div>
+          <h3>Applied Research</h3>
+          <p>Fine-tuning, RAG, and custom model work — scoped tightly, benchmarked honestly, shipped to production on a calendar, not a vision.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-num">04</div>
+          <h3>Advisory</h3>
+          <p>Short engagements to unblock a team — architecture review, build-vs-buy analysis, or a week of pair-programming with your staff engineers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-dark" id="contact">
+    <div class="section-inner contact-inner">
+      <div class="eyebrow" style="color: var(--mist)">03 — Contact</div>
+      <h2 style="color: var(--white)">Tell us about the work.</h2>
+      <p class="lead" style="color: var(--mist)">
+        The best way to start is a short email describing what you're trying to
+        ship and where it's stuck. We'll reply within two business days.
+      </p>
+
+      <a href="mailto:dp@attoforce.ai" class="contact-email" aria-label="Email dp at attoforce dot ai">
+        dp@attoforce.ai
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+          <path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+        </svg>
+      </a>
+
+      <div class="contact-meta">
+        <div>
+          <div class="meta-label">Email</div>
+          <a href="mailto:dp@attoforce.ai">dp@attoforce.ai</a>
+        </div>
+        <div>
+          <div class="meta-label">Hours</div>
+          <span>Monday – Friday</span>
+        </div>
+        <div>
+          <div class="meta-label">Response</div>
+          <span>Within 2 business days</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span>&copy; <span id="year">2026</span> Attoforce. All rights reserved.</span>
+      <a href="mailto:dp@attoforce.ai">dp@attoforce.ai</a>
+    </div>
+  </footer>
+
+  <script>
+    // tiny enhancements — no frameworks
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Condense nav on scroll
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 20) nav.classList.add('is-scrolled');
+      else nav.classList.remove('is-scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  </script>
+</body>
+</html>
