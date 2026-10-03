@@ -1,0 +1,29 @@
+{
+  "checkedAt": "2026-10-03",
+  "package": "attoforce-site-2026-10-03-cache-fix.zip",
+  "sha256": "a78e36b3f1e397aa7396958e1308036cd4fea1e144fd3c76de1178b1e0a8dc19",
+  "packageFiles": 42,
+  "productionPages": 13,
+  "versionedCssJsAssets": 6,
+  "rootIndexVerified": true,
+  "zipIntegrityVerified": true,
+  "allFilesMatchBuild": true,
+  "buildChecksPassed": true,
+  "assetChecksPassed": true,
+  "analyticsChecksPassed": true,
+  "themeChecksPassed": true,
+  "deployed": false,
+  "dashboardReceiptVerified": false,
+  "diagnosis": "New live HTML matched the uploaded package. The browser loaded the former stylesheet with 83 rules; a fresh HTTP request matched current CSS. Porkbun CSS cache lifetime is 2592000 seconds (30 days).",
+  "browserChecks": {
+    "previewOfExtractedZip": true,
+    "desktopWidth": 1280,
+    "mobileWidth": 390,
+    "homeAndCareersNoHorizontalOverflow": true,
+    "offeringLayoutReviewed": true,
+    "mobileMenuPassed": true,
+    "dayThemeSwitchPassed": true,
+    "animationPausePassed": true,
+    "browserConsoleErrors": 0
+  }
+}
